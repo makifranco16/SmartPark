@@ -72,4 +72,8 @@ public class ParkingService {
                 .collect(Collectors.toList());
     }
 
+    public List<Vehicle> getAllVehicles() {
+        return store.vehicles.values().stream().collect(Collectors.toList());
+    }
+
 }

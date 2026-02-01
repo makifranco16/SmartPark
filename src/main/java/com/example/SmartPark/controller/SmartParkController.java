@@ -60,4 +60,9 @@ public class SmartParkController {
     public List<Vehicle> vehiclesInLot(@PathVariable String lotId) {
         return service.getVehiclesInLot(lotId);
     }
+
+    @GetMapping("/vehicles")
+    public List<Vehicle> getAllVehicles() {
+        return service.getAllVehicles();
+    }
 }
