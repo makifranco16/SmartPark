@@ -18,6 +18,12 @@ public class ParkingService {
 
     public ParkingService(ParkingDataStore store) {
         this.store = store;
+
+        ParkingLot lot1 = new ParkingLot("LOT-001", "Downtown", 5, 0);
+        store.parkingLots.put(lot1.getLotId(), lot1);
+
+        Vehicle vehicle1 = new Vehicle("CAR-001", "Car", "John Doe");
+        store.vehicles.put(vehicle1.getLicensePlate(), vehicle1);
     }
 
     public void registerParkingLot(ParkingLot lot) {
@@ -30,7 +36,7 @@ public class ParkingService {
 
     public void checkIn(String lotId, String licensePlate) {
         ParkingLot lot = store.parkingLots.get(lotId);
-
+        Vehicle vehicle = store.vehicles.get(licensePlate);
         if (lot == null)
             throw new RuntimeException("Parking lot not found");
 
@@ -41,6 +47,7 @@ public class ParkingService {
             throw new RuntimeException("Vehicle already parked");
 
         lot.setOccupiedSpaces(lot.getOccupiedSpaces() + 1);
+        vehicle.setParkedLotId(lotId);
         store.parkedVehicles.put(licensePlate, lotId);
     }
 

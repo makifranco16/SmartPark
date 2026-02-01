@@ -6,6 +6,13 @@ public class ParkingLot {
     private int capacity;
     private int occupiedSpaces;
 
+    public ParkingLot(String lotId, String location, int capacity, int occupiedSpaces) {
+        this.lotId = lotId;
+        this.location = location;
+        this.capacity = capacity;
+        this.occupiedSpaces = occupiedSpaces;
+    }
+
     public int getAvailableSpaces() {
         return capacity - occupiedSpaces;
     }

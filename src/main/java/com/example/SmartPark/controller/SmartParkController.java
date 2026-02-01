@@ -42,6 +42,7 @@ public class SmartParkController {
     public void checkIn(
             @RequestParam String lotId,
             @RequestParam String licensePlate) {
+        System.out.println(lotId + " ??? " +licensePlate);
         service.checkIn(lotId, licensePlate);
     }
 

@@ -6,6 +6,12 @@ public class Vehicle {
     private String ownerName;
     private String parkedLotId;
 
+    public Vehicle(String licensePlate, String type, String ownerName) {
+        this.licensePlate = licensePlate;
+        this.type = type;
+        this.ownerName = ownerName;
+    }
+
     public String getLicensePlate() {
         return licensePlate;
     }
