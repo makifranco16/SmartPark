@@ -6,6 +6,10 @@ public class ParkingLot {
     private int capacity;
     private int occupiedSpaces;
 
+    public int getAvailableSpaces() {
+        return capacity - occupiedSpaces;
+    }
+
     public String getLotId() {
         return lotId;
     }
